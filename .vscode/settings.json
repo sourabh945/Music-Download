@@ -4,5 +4,7 @@
     ],
     "cSpell.enableFiletypes": [
         "shellscript"
-    ]
+    ],
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.autoImportCompletions": true
 }
