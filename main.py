@@ -39,7 +39,7 @@ video_title = video.title
 
 print("\n Title :: ", video_title)
 
-if os.path.exists(path+video_title+'.mp4') is True:
+if os.path.isfile(path+video_title+'.mp4') is True:
     print("\nFile is already exits")
     if input("You wanna to replace it , enter 'y' to conform :: ").lower() != 'y': exit()
     
