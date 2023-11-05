@@ -20,7 +20,7 @@ except:
     print("Please pass the link of the video as argument")
     exit()
 
-path = "./Downloads/Youtube_downloads"
+path = "./Downloads/Youtube_downloads/"
 
 
 if os.path.exists(path) is False :
