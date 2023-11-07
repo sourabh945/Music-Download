@@ -15,6 +15,18 @@ except:
     from pytube import YouTube
 
 try: 
+    from moviepy.editor import *
+except:
+    print("\nYou doesn't have moviepy installed in python")
+    if input("\nEnter 'y' to conform the installation of moviepy in python :: ").lower() != 'y': exit()
+    try : 
+        subprocess.run(['python3','-m','pip','install','moviepy'])
+    except Exception as error: 
+        print(error)
+        exit()
+    from moviepy.editor import *
+
+try: 
     link = argv[1]
 except:
     print("Please pass the link of the video as argument")
@@ -55,3 +67,12 @@ try:
     print(f"Download complete ")
 except Exception as error:
     print(f"Unable to download due to error : {error}")
+
+try:
+    print("Converting video into the audio")
+    video_ed = AudioFileClip(os.path.join(path+video_title+".mp4"))
+    video_ed.write_audiofile(os.path.join(path+video_title+".mp3"))
+    os.remove(path+video_title+".mp4")
+    print("Convertion is complete")
+except Exception as error:
+    print(f"Unable to convert due to error :: {error}")
